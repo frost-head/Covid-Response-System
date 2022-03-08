@@ -6,8 +6,8 @@ from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'FrostHead'
-app.config['MYSQL_PASSWORD'] = 'FrostHead@439751'
+app.config['MYSQL_USER'] = os.environ.get("Mysql_user")
+app.config['MYSQL_PASSWORD'] = os.environ.get("Mysql_pass")
 app.config['MYSQL_DB'] = 'FightCovid'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 app.secret_key = os.urandom(24)
