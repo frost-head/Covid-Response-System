@@ -1,0 +1,48 @@
+{% extends 'Base.html' %}
+
+{%block head%}
+<title>Help Others</title>
+{%endblock%}
+
+{%block body%}
+
+
+<div class="container" style="margin-top:130px ">
+
+  <H1 style="margin-top:130px">
+    Search for Needy
+</H1>
+<hr>
+<p style="opacity: 0.7; font-size: 1.2rem; word-spacing: 2px;">
+    Please search requests near you by Zipcode of your area
+</p>
+
+  <form method="post" style="margin-top: 5vh; margin-bottom: 5vh">
+    <div class="row mb-3">
+        <label for="inputLocation3" class="col-sm-2 col-form-label">Zipcode</label>
+        <div class="col-sm-10">
+          <input type="text" placeholder='1750028' required='required' name="Location" class="form-control" id="inputLocation3">
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Search</button>
+
+  </form>
+
+{% for info in data: %}
+    <div class="card" style="width: 100%;background-color: rgba(200, 200, 200, 0.8); margin-bottom:3vh">       
+        <div class="card-body">
+          <h5 class="card-title">{{info['city']}}, {{info['state']}}</h5>
+          <p class="card-text">{{info['Requirnment']}}</p>
+          
+          <h6 class="col-md-12"><strong>Address :-</strong>  {{info['Address']}}, {{info['Zipcode']}}</h6>
+            <a href="https://api.whatsapp.com/send?phone={{info['Pnumber']}}" class="btn btn-primary col-md-2">Contact</a>
+    </div>
+      </div>
+{% endfor %}
+</div>
+
+
+
+{%endblock%}

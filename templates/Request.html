@@ -1,0 +1,65 @@
+{% extends 'Base.html' %}
+
+{%block head%}
+<title>Home</title>
+{%endblock%}
+
+{%block body%}
+<div class="container" style="margin-top:130px; margin-bottom:30px">
+    <H1 style="margin-top:130px">
+        Create a Request
+    </H1>
+    <hr>
+    <p style="opacity: 0.7; font-size: 1.2rem; word-spacing: 2px;">
+      Please put real Details as they are going to be used to contact you.
+    </p>
+    
+    <form method="post" style="margin-top: 5vh;">
+        <div class="row mb-3">
+            <label for="inputRequests3" class="col-sm-2 col-form-label">Requests<br><small style="opacity:80%">Your request in short simple manner</small></label>
+            <div class="col-sm-10">
+                <textarea class="form-control" placeholder='urgent need of Such and Such things if any one can provide it wil be very helpful' name="Requests" aria-label="With textarea" required='required'></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputNumber3" class="col-sm-2 col-form-label">Whatsapp Number <br><small style="opacity:80%">Current Working Whatsapp Number</small> </label>
+          
+          <div class="col-sm-10">
+            <input type="text" placeholder='+91 1234567890' required='required' name="Number" class="form-control" id="inputNumber3">
+          </div>
+      </div>
+        <div class="row mb-3">
+        <label for="inputAddress3" class="col-sm-2 col-form-label">Address <br><small style="opacity:80%">Address of needy</small></label>
+        <div class="col-sm-10">
+          <input type="text" placeholder='Zonal Hospital, near raja ji palace' required='required' name="Address" class="form-control" id="inputAddress3">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputCity3" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+          <input type="text" placeholder='Mandi' required='required' name="City" class="form-control" id="inputCity3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="inputZipcode3" class="col-sm-2 col-form-label">Zipcode <br></label>
+        <div class="col-sm-10">
+          <input type="text" placeholder='175028' required='required' name="Zipcode" class="form-control" id="inputZipcode3">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="inputState3" class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+          <input type="text" placeholder='Hp' required='required' name="State" class="form-control" id="inputState3">
+        </div>
+    </div>
+
+      <button type="submit" class="btn btn-outline-success">Request</button>
+    </form>
+    
+</div>
+
+
+
+{%endblock%}

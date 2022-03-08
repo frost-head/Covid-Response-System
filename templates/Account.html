@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+
+{%block head%}
+<title>Account</title>
+{%endblock%}
+
+{%block body%}
+
+
+<div class="container" style="margin-top:130px ">
+
+  <H1 style="margin-top:130px">
+    Hi, {{name['Name']}}
+</H1>
+<hr>
+<p style="opacity: 0.7; font-size: 1.2rem; word-spacing: 2px;">
+  Here are your requests,   
+  Please delete the requests that are already full filled
+</p>
+<a href="/logout" class="btn btn-danger" style="margin-bottom:5vh">Log out</a>
+
+{% if data %}
+{% for info in data: %}
+    <div class="card" style="width: 100%;background-color: rgba(200, 200, 200, 0.8); margin-bottom:3vh">       
+        <div class="card-body">
+          <h5 class="card-title">{{info['city']}}, {{info['state']}}</h5>
+          <p class="card-text">{{info['Requirnment']}}</p>
+          
+          <h6 class="col-md-12"><strong>Address :-</strong>  {{info['Address']}}, {{info['Zipcode']}}</h6>
+            <a href="/delete/{{info['Rid']}}" class="btn btn-outline-danger col-md-2">Delete</a>
+    </div>
+      </div>
+{% endfor %}
+{% else %}
+<p style="font-weight: bold; font-size: 1.2rem; word-spacing: 2px;">
+  No Requests made yet
+
+</p>
+{% endif %}
+</div>
+
+
+
+{%endblock%}
